@@ -1,0 +1,63 @@
+##############################################################################
+## Module: @(#)termcap	version: 1.0     Date: 10/1/2021
+## Author: Lester Knutsen  Contact: lester@advancedatatools.com
+## Copyright: Advanced DataTools Corporation - 2021
+## Description: Informix 4GL for Developers Training Class Example Lab
+## ZA = COLOR Settings
+## f0-f9 = Function Key Settings
+## gs = Graphic Draw boxes using ansi character set
+##############################################################################
+## Modified xterm  - This is my current working one.
+v1|xterm|vt100|DEC vt100:\
+        :bs:am:xn:xv:pt:cd=\E[J:ce=2\E[K:cl=45\E[H\E[J:\
+        :cs=%i\E[%d;%dr:cm=%i\E[%d;%dH:co#80:li#24:\
+        :Hi=\E=:Hf=\E>:HI=^|:Po=\E1:Pe=\E2:\
+        :bc=\E[D:do=\E[B:nd=\E[C:sr=\EM:up=\E[A:so=\E[7m:se=\E[m:\
+        :ku=\E[A:kd=\E[B:kr=\E[C:kl=\E[D:kh=\E[H:us=\E[4m:ue=\E[0m:\
+        :KA=\EOu:KU=\EOM:KB=\EOv:KC=\EOt:\
+        :Ki=\EOr:KT=\EOl:KY=\EOS:KZ=\EOq:\
+        :Kd=\EOm:k6=\EOs: \
+        :sc=\E7:rc=\E8: \
+	# function keys F1 (k0) to F10 (k9) \
+        :k0=\EOP:k1=\EOQ:k2=\EOR:k3=\EOS:k4=\E[15~:\
+        :k5=\E[17~:k6=\E[18~:k7=\E[19~:k8=\E[20~:k9=\E[21~:\
+	# capability to display graphic boxes using the ansi character set \
+        :gs=\E(0:ge=\E(B:gb=lmkjqxntuvw:\
+	# informix 4gl color support  - the next line is one very long line \
+	:ZA=\E[0%?%p1%{0}%=%t;37%e%p1%{1}%=%t;33%e%p1%{2}%=%t;35%e%p1%{3}%=%t;31%e%p1%{4}%=%t;36%e%p1%{5}%=%t;32%e%p1%{6}%=%t;34%e%p1%{7}%=%t;30%;%?%p2%t;7%;%?%p3%t;5%;%?%p4%t;4%;m
+
+## Dark Mode Screen
+v2|xtermd|vt100|DEC vt100:\
+        :bs:am:xn:xv:pt:cd=\E[J:ce=2\E[K:cl=45\E[H\E[J:\
+        :cs=%i\E[%d;%dr:cm=%i\E[%d;%dH:co#80:li#24:\
+        :Hi=\E=:Hf=\E>:HI=^|:Po=\E1:Pe=\E2:\
+        :bc=\E[D:do=\E[B:nd=\E[C:sr=\EM:up=\E[A:so=\E[7m:se=\E[m:\
+        :ku=\E[A:kd=\E[B:kr=\E[C:kl=\E[D:kh=\E[H:us=\E[4m:ue=\E[0m:\
+        :KA=\EOu:KU=\EOM:KB=\EOv:KC=\EOt:\
+        :Ki=\EOr:KT=\EOl:KY=\EOS:KZ=\EOq:\
+        :Kd=\EOm:k6=\EOs: \
+        :sc=\E7:rc=\E8: \
+	# function keys F1 (k0) to F10 (k9) \
+        :k0=\EOP:k1=\EOQ:k2=\EOR:k3=\EOS:k4=\E[15~:\
+        :k5=\E[17~:k6=\E[18~:k7=\E[19~:k8=\E[20~:k9=\E[21~:\
+	# capability to display graphic boxes using the ansi character set \
+        :gs=\E(0:ge=\E(B:gb=lmkjqxntuvw:\
+	# informix 4gl color support  - the next line is one very long line \
+	:ZA=\E[%?%p1%{0}%=%t0m\E[37%e%p1%{1}%=%t33%e%p1%{2}%=%t35%e%p1%{3}%=%t31%e%p1%{4}%=%t36%e%p1%{5}%=%t32%e%p1%{6}%=%t34%e%p1%{7}%=%t30%;m\E[40m%?%p2%t\E[7m%;%?%p3%t\E[5m%;%?%p4%t\E[4m%;:
+
+## My original termcap from 1993 for SCO consoles and PCs with ANSI terminal emulation
+## Modified Informix 4GL ansi color, function keys, and box borders
+## Does not work with current xterm
+ansi|Ansi standard crt:\
+	:al=\E[L:am:bs:cd=\E[J:ce=\E[K:cl=\E[2J\E[H:cm=\E[%i%d;%dH:co#80:\
+	:dc=\E[P:dl=\E[M:dn=\E[B:ei=:ho=\E[H:ic=\E[@:im=:li#24:\
+	:nd=\E[C:ms:pt:so=\E[7m:se=\E[m:us=\E[4m:ue=\E[m:up=\E[A:\
+	:kb=^h:ku=\E[A:kd=\E[B:kl=\E[D:kr=\E[C:eo:\
+	# capability to display graphic boxes using the PC ansi character set \
+	:gs=:ge=:gb=\332\300\277\331\304\263:\
+	# function keys F1 (k0) to F10 (k9) \
+	:k0=\E[M:k1=\E[N:k2=\E[O:k3=\E[P:k4=\E[Q:\
+	:k5=\E[R:k6=\E[S:k7=\E[T:k8=\E[U:k9=\E[V:\
+	# informix 4gl color support  - the next line is one very long line \
+	:ZA=\E[%?%p1%{0}%=%t0m\E[37%e%p1%{1}%=%t33%e%p1%{2}%=%t35%e%p1%{3}%=%t31%e%p1%{4}%=%t36%e%p1%{5}%=%t32%e%p1%{6}%=%t34%e%p1%{7}%=%t30%;m\E[40m%?%p2%t\E[7m%;%?%p3%t\E[5m%;%?%p4%t\E[4m%;:
+
